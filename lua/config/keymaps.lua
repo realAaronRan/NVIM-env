@@ -7,3 +7,8 @@ local Util = require("lazyvim.util")
 local map = Util.safe_keymap_set
 local unmap = vim.keymap.del
 map("n", "<leader>ba", "<cmd>wa<cr>", { desc = "Save all buffers" })
+
+-- add terminal border
+vim.keymap.set("n", "<C-_>", function ()
+    Util.terminal(nil, { border = "solid" })
+end, { desc = "Term with border" })
