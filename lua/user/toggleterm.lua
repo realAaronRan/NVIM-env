@@ -20,3 +20,23 @@ function _G.set_terminal_keymaps()
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({
+  cmd = "lazygit",
+  hidden = true,
+  direction = "float",
+  float_opts = {
+    border = "double",
+    width = function()
+      return math.floor(vim.o.columns * 0.9)
+    end,
+    height = function()
+      return math.floor(vim.o.lines * 0.9)
+    end,
+  },
+})
+
+function _LAZYGIT_TOGGLE()
+  lazygit:toggle()
+end

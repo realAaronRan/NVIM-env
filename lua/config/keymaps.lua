@@ -23,3 +23,6 @@ map({ "n", "t" }, "<A-h>", "<C-w>h", { desc = "Go to left window", remap = true 
 map({ "n", "t" }, "<A-j>", "<C-w>j", { desc = "Go to left window", remap = true })
 map({ "n", "t" }, "<A-k>", "<C-w>k", { desc = "Go to left window", remap = true })
 map({ "n", "t" }, "<A-l>", "<C-w>l", { desc = "Go to left window", remap = true })
+
+unmap("n", "<leader>gg")
+map("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<cr>", { desc = "Toggle Lazy Git" })
